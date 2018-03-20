@@ -1,0 +1,7 @@
+.idea
+.idea*
+.git
+.git/*
+node_modules/
+yarn.lock
+app/dist/*

@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+/**
+ * Vue transitions
+ */
+
+.popup-enter-active{
+    transition: all .4s ease;
+    opacity: 1;
+    top: 40%;
+}
+
+.popup-leave-active{
+    transition: all .4s ease;
+    opacity: 0;
+    top: 70%;
+}
+
+.popup-enter{
+    top: 10%;
+}
+
+.opacity-active{
+    transition: all .2s ease;
+    opacity: 1;
+}
+
+.opacity-leave-active{
+    transition: all .2s ease;
+    opacity: 0;
+}
+
+.opacity-enter{
+    opacity: 0;
+}

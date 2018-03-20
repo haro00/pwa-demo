@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+/**
+ * 字体
+ */
+$font: Microsoft Yahei;
+
+/**
+ * 布局
+ */
+
+
+/**
+ * 颜色
+ */
+$theme: #409eff;
+$primary: #409eff;
+$success: #67c23a;
+$warn: #eb9e05;
+$error: #fa5555;
+$info: #878d99;
+$disabled: #c2c2c2;
+
+$red: #fa5555;
+$green: #00bfb0;
+$blue: #0281d8;
+
+
+// 字体
+$content: #333;
+$gray: #666;
+
+// 背景
+$bg-color: #eee;
+
+// 边框
+$border-color: #e1e1e1;
+
+/**
+ * 层级
+ */
+$index-header: 6;
+$index-mask: 9;
+$index-popup: 10;

@@ -1,0 +1,221 @@
+@charset "utf-8";
+
+/**
+ * 公用样式类
+ */
+
+.clearfix{
+    *zoom: 1;
+    &:after{
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+.cb{
+    clear: both;
+}
+
+.cp{
+    cursor: pointer;
+}
+
+.tal{
+    text-align: left;
+}
+
+.tac{
+    text-align: center;
+}
+
+.tar{
+    text-align: right;
+}
+
+.fl{
+    float: left;
+}
+
+.fr{
+    float: right;
+}
+
+.fn{
+    float: none;
+}
+
+.input-text{
+    width: 300px;
+    height: 40px;
+    padding: 0 10px;
+    border: 1px solid #bfcbd9;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color .2s cubic-bezier(.645, .045, .355, 1);
+    box-sizing: border-box;
+    &::-webkit-input-placeholder{
+        color: #97a8be
+    }
+    &::-moz-placeholder{
+        color: #97a8be
+    }
+    &:-ms-input-placeholder{
+        color: #97a8be
+    }
+    &::placeholder{
+        color: #97a8be
+    }
+    &:hover{
+        border-color: #8391a5;
+    }
+    &:disabled{
+        background: #f5f7fa;
+        border-color: #dfe4ed;
+        color: #b4bccc;
+        cursor: not-allowed;
+    }
+}
+
+.input-checkbox{
+    position: relative;
+    input[type='checkbox']{
+        position: absolute;
+        z-index: -1;
+        display: none;
+        &:checked ~{
+            span{
+                &:before{
+                    background: $primary;
+                }
+                &:after{
+                    transform: rotate(45deg) scaleY(1);
+                }
+            }
+        }
+        &:disabled{
+            ~ span:before{
+                background: #eef1f6;
+                border-color: #d1dbe5;
+                cursor: not-allowed;
+            }
+            &:checked ~ span:before{
+                background: #d1dbe5;
+            }
+        }
+    }
+    span{
+        position: relative;
+        display: inline-block;
+        padding-left: 22px;
+        min-height: 18px;
+        line-height: 18px;
+        &:before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 18px;
+            height: 18px;
+            background: transparent;
+            border: 1px solid $primary;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        &:after{
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 6px;
+            display: block;
+            width: 4px;
+            height: 8px;
+            box-sizing: content-box;
+            border-right: 2px solid #fff;
+            border-bottom: 2px solid #fff;
+            transform: rotate(45deg) scaleY(0);
+            transition: transform .15s cubic-bezier(.71, -.46, .88, .6) .05s
+        }
+    }
+}
+
+.input-radio{
+    position: relative;
+    input[type='radio']{
+        position: absolute;
+        z-index: 0;
+        display: none;
+        &:checked ~{
+            span{
+                &:before{
+                    border-color: $primary;
+                    background: $primary;
+                }
+                &:after{
+                    display: block;
+                }
+            }
+        }
+        &:disabled{
+            ~ span{
+                &:before{
+                    background: #eef1f6;
+                    border-color: #d1dbe5;
+                    cursor: not-allowed;
+                }
+                &:after{
+                    display: none;
+                }
+            }
+            &:checked ~ span:before{
+                background: #d1dbe5;
+            }
+        }
+    }
+    span{
+        position: relative;
+        display: inline-block;
+        min-width: 16px;
+        min-height: 16px;
+        //transition: background-color .25s cubic-bezier(.71, -.46, .29, 1.46);
+        &:before{
+            content: '';
+            display: block;
+            width: 16px;
+            height: 16px;
+            background: transparent;
+            border: 1px solid #d8dce5;
+            border-radius: 50%;
+            box-sizing: border-box;
+        }
+        &:after{
+            content: '';
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            display: none;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: #fff;
+            box-sizing: content-box;
+        }
+        &:hover:before{
+            border-color: $primary;
+        }
+    }
+}
+
+.required{
+    position: relative;
+    display: inline-block;
+    &:before{
+        content: '*';
+        position: absolute;
+        top: 0;
+        left: -7px;
+        font-size: 16px;
+        color: $red;
+    }
+}
